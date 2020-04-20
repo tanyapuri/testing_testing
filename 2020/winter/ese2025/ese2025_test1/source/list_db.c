@@ -19,8 +19,11 @@
  */
 stuLL_t* createNodeLinkedList(void)
 {
+	struct stuLL_t *new = (stuLL_t*) malloc (sizeof(stuLL_t)); 
 	// PROBLEM #1: complete the code for this function
 	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
+	return new;
+	
 }
 
 /*
