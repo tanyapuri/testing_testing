@@ -21,7 +21,15 @@
  */
 int comparo_fName(const void *pA, const void *pB)
 {
+	// extract student records
+	stuDA_t student_A = *((stuDA_t*) pA);
+	stuDA_t student_B = *((stuDA_t*) pB);
 
+	// get student given names
+	char *fName_A = student_A.data.fName;
+	char *fName_B = student_B.data.fName;
+
+	return strcmp(fName_A, fName_B);
 	// PROBLEM #3: complete the code for this function
 	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
 }
@@ -49,6 +57,17 @@ int comparo_gName(const void *pA, const void *pB)
  */
 int comparo_grade(const void *pA, const void *pB)
 {
+	stuDA_t student_A = *((stuDA_t*) pA);
+	stuDA_t student_B = *((stuDA_t*) pB);
+
+	// get student given names
+	float gName_A = student_A.data.grade;
+	float gName_B = student_B.data.grade;
+if(gName_A>gName_B){return 1;}
+else
+{return -1;}
+return 0;
+	
 	// PROBLEM #4: complete the code for this function
 	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
 }
@@ -91,8 +110,10 @@ stuDA_t* sortDynamicArray(stuDA_t *pHEAD, const sort_t sort_type,
 		qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_fName);
 		break;
 	case gNamesort:
+	qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_gName);
 		// fill the code here for Part a)
 	case gradesort:
+	qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_grade);
 		// fill the code here for Part b)
 	}
 	return pHEAD;
